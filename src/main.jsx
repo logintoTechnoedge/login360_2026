@@ -5,7 +5,7 @@ import App from './App.jsx'
 import TagManager from 'react-gtm-module';
 
 const tagManagerArgs = {
-    gtmId: 'GTM-M7QB9VRW'
+    gtmId: 'GTM-KDF75342'
 };
 
 TagManager.initialize(tagManagerArgs);
