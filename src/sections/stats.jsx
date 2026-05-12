@@ -16,7 +16,7 @@ function Stats({ onBookDemo, onApply , page , openPopup }) {
 
       <h1 className="reveal">
         Become a <span className="highlight">IT Professional</span>
-        <br />& Get Placed in 3–4 Months 🚀
+        <br />& Get Placed in 3–4 Months 
       </h1>
 
       <p className="intro-sub reveal">
@@ -33,7 +33,7 @@ function Stats({ onBookDemo, onApply , page , openPopup }) {
           </div>
         ))}
       </div>
-
+        
       <div className="cta-duo reveal">
         <button className="btn-p" onClick={() => openPopup({ heading: `Book Free Demo Class`, btnText: "Book now", formType: `${page} Book Demo` })}>
           <FaCalendarAlt size={15} /> Book Free Demo Class

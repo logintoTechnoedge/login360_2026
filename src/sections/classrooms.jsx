@@ -3,7 +3,7 @@ import { useState } from "react";
 const CLASSES = [
   { id: "EZK2vW9u620", label: "Java – OOP Concepts"       },
   { id: "Pki54nQGrlQ", label: "Python – Data Structures"  },
-  { id: "unTmLqyoT7M", label: "React – Component Design"  },
+  { id: "tpb310xSV7E", label: "Resume Design"  },
   { id: "7hHA-d053ck", label: "SQL – Database Design"     },
   { id: "yFEwSVrhXWY", label: "Power BI – Dashboards"     },
   { id: "aqN6q4ouGr8", label: "ML – Model Training"       },
