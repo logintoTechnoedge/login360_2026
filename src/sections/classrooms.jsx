@@ -3,10 +3,10 @@ import { useState } from "react";
 const CLASSES = [
   { id: "EZK2vW9u620", label: "Data Science – Machine Learning"       },
   { id: "Pki54nQGrlQ", label: "Python – Conditional Statements"  },
-  { id: "tpb310xSV7E", label: "Resume Building"  },
+  { id: "unTmLqyoT7M", label: "Fullstack Development"       },
   { id: "7hHA-d053ck", label: "Interview Preperation"     },
   { id: "uOSsEra1TQM", label: "Quiz - Competition"     },
-  { id: "_o7U0iJcPAg", label: "Data Analytics - Types"       },
+  { id: "tpb310xSV7E", label: "Resume Building"  },
 ];
 
 function ClsCard({ id, label }) {

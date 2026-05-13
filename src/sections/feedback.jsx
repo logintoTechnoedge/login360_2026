@@ -1,40 +1,111 @@
-const REELS = [
-    { id: "DNhf3H-Juum",  label: "Kavitha – Java Batch"       },
-    { id: "DNcpfa2xUrx",  label: "Arjun – Python Batch"       },
-    { id: "DR6L8oiiRxt",  label: "Meena – Data Analytics"     },
-    { id: "DWanlWZifGF",  label: "Karthik – Full Stack"       },
-    { id: "DWQWQu_icYC",  label: "Divya – Power BI Batch"     },
-    { id: "DWYy3hUCVYi",  label: "Suresh – SQL Batch"         },
-  ];
-  
-  function Feedback() {
-    return (
-      <section className="section" id="feedback">
-        <div className="section-head reveal">
-          <span className="section-tag">Student Love</span>
-          <h2>What Our Students Say ❤️</h2>
-          <p>Unscripted, raw feedback from our alumni</p>
-        </div>
-  
-        <div className="reels-grid reveal">
-          {REELS.map((reel) => (
-            <div className="reel-card" key={reel.id}>
-              <div className="reel-frame">
-                <iframe
-                  src={`https://www.instagram.com/reel/${reel.id}/embed/`}
-                  loading="lazy"
-                  allowFullScreen
-                  allowTransparency
-                  scrolling="no"
-                  title={reel.label}
-                />
-              </div>
-              <div className="reel-label">{reel.label}</div>
+import { useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
+
+const PLACEMENTS = [
+  {
+    videoId: "YRaN8Re1_iE",
+    title:   "Placed Student 1",
+    name:    "Kokila",
+    company: "UI UX",
+    initials:"RK",
+    gradient:"linear-gradient(135deg,#0B5ED7,#1a6ef5)",
+  },
+  {
+    videoId: "q_mdWphcl08",
+    title:   "Placed Student 2",
+    name:    "Muthu Kumar",
+    company: "Devops",
+    initials:"PD",
+    gradient:"linear-gradient(135deg,#00C897,#0B5ED7)",
+  },
+  {
+    videoId: "YUo3UIxMkj4",
+    title:   "Placed Student 3",
+    name:    "Lenin",
+    company: "Java Fullstack",
+    initials:"AK",
+    gradient:"linear-gradient(135deg,#FACC15,#f97316)",
+  },
+  {
+    videoId: "VhrYyfR3BCo",
+    title:   "Placed Student 4",
+    name:    "Divya",
+    company: "Python Fullstack",
+    initials:"SM",
+    gradient:"linear-gradient(135deg,#8b5cf6,#0B5ED7)",
+  },
+  {
+    videoId: "VoqLmu9Y6g8",
+    title:   "Placed Student 5",
+    name:    "Rafi",
+    company: "Java Fullstack",
+    initials:"RK",
+    gradient:"linear-gradient(135deg,#0B5ED7,#1a6ef5)",
+  },
+  {
+    videoId: "pQQDVpLeC2Y",
+    title:   "Placed Student 6",
+    name:    "Gowtham",
+    company: "Fullstack",
+    initials:"PD",
+    gradient:"linear-gradient(135deg,#00C897,#0B5ED7)",
+  },
+];
+
+function VidCard({ videoId, title, name, company, initials, gradient }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="vid-card reveal">
+      <div className="vid-frame">
+        {!loaded && (
+          <div className="vid-skel">
+            <div className="play-btn">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
             </div>
-          ))}
+          </div>
+        )}
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?si=X6VCxsqsVPugSIRp`}
+          loading="lazy"
+          allowFullScreen
+          title={title}
+          onLoad={() => setLoaded(true)}
+          style={{ opacity: loaded ? 1 : 0 }}
+        />
+      </div>
+
+      <div className="vid-info">
+        <div className="vid-av" style={{ background: gradient }}>{initials}</div>
+        <div>
+          <div className="vid-name">{name}</div>
+          <div className="vid-meta">
+            <span className="placed-tag">
+              {/* <FaCheckCircle size={12} /> Placed at */} {company}
+            </span>
+          </div>
         </div>
-      </section>
-    );
-  }
-  
-  export default Feedback;
+      </div>
+    </div>
+  );
+}
+
+function Feedback() {
+  return (
+    <section className="section alt" id="placements">
+      <div className="section-head reveal">
+        <span className="section-tag">Student Love</span>
+        <h2>What Our Students Say ❤️</h2>
+        <p>Unscripted, raw feedback from our alumni</p>
+      </div>
+
+      <div className="vid-list">
+        {PLACEMENTS.map((p) => (
+          <VidCard key={p.videoId} {...p} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default Feedback;
