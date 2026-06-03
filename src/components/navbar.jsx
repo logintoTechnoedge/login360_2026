@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaGraduationCap, FaChevronDown, FaBars, FaTimes } from 'react-icons/fa';
 
 const NAV_LINKS = [
-  // { label: 'Home', to: '/' },
+  { label: 'Home', to: '/' },
   // {
   //   label: 'Courses',
   //   dropdown: [
@@ -22,7 +22,7 @@ const NAV_LINKS = [
   //   ],
   // },
   // { label: 'Courses', to: '/courses' },
-  // { label: 'Placements', to: '/placements' },
+  { label: 'Placements', to: '/placements' },
   // { label: 'About Us', to: '/about-us' },
   // { label: 'Contact', to: '/contact' },
 ];

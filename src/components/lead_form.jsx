@@ -146,7 +146,7 @@ function LeadForm({ isPopup = false, config = {}, onClose, page }) {
           <option value="" hidden>
             -- Select Course --
           </option>
-          { (page == "Home Page" )?
+          { (page == "Home Page" || page == "Placements")?
           <>
             <option value="Java Full Stack">Java Fullstack</option>
             <option value="Python Full Stack">Python Fullstack</option>
