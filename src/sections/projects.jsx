@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const PROJECTS = [
   {
@@ -103,8 +103,38 @@ function DemoCard({ id, label }) {
 }
 
 function Projects({ page, openPopup }) {
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry.isIntersecting) {
+          openPopup({
+            heading: "Start Building Projects Today",
+            btnText: "Start Today",
+            formType: `${page} Start Today`,
+          })
+        }
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="section" id="projects">
+    <section className="section" id="projects" ref={sectionRef}>
       <div className="section-head reveal">
         <span className="section-tag">💻 Projects</span>
         <h2>
