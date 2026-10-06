@@ -40,7 +40,7 @@ function Stats({ onBookDemo, onApply , page , openPopup }) {
         </button>
         <button className="btn-s" onClick={() => openPopup({ heading: `Apply Now for your Profession`, btnText: "Apply now", formType: `${page} Demo Apply` })}>
           <FaPencilAlt size={14} /> Apply Now
-        </button>
+        </button> 
       </div>
     </section>
   );

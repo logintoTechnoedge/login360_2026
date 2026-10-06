@@ -1,4 +1,17 @@
 import { FaWhatsapp } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa';
+
+export const PhoneFloat = () => {
+  return (
+    <a
+      className="phone-float"
+      href="tel:+918056477261"
+      aria-label="Call Login360"
+    >
+      <FaPhone size={24} color="#fff" />
+    </a>
+  );
+};
 
 const WhatsappFloat = () => {
     return(

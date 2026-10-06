@@ -1,6 +1,6 @@
 import React from 'react';  
 import Hero from '../sections/hero.jsx'; 
-import WhatsappFloat from '../components/whatsapp_float.jsx'; 
+import WhatsappFloat, { PhoneFloat } from '../components/float_icons.jsx'; 
 import PainPoints from '../sections/pain_points.jsx';
 import WhyLogin from '../sections/why_login.jsx';
 import DACurriculam from '../courses/da_curriculam.jsx';
