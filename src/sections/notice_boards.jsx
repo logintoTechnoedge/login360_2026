@@ -8,19 +8,21 @@ export const ToastMessagePlacements = ({ message, actionText , openPopup ,page }
 
   return (
     <div className="toast-placements">
+      <marquee>
       <span>{message}</span>
 
-      <button
+      {/* <button
         className="toast-close"
         onClick={() => setVisible(false)}
         aria-label="Close notification"
       >
         <FaTimes />
-      </button>
+      </button> */}
 
       <button className="toast-message-button" onClick={() => openPopup({ heading: `Book Free Demo Class`, btnText: "Book now", formType: `${page} Book Demo` })}>
         <span>{actionText}</span>
       </button>
+      </marquee>
     </div>
   );
 };
